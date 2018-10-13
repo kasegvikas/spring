@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Bean defenation without is and name attributes -->
+	<bean class="com.kasegvikas.model.ThingOne" />
+	
+	<!-- Constructor argument with name and value attributes -->
+	<bean name="thingTwo" class="com.kasegvikas.model.ThingTwo">
+		<constructor-arg name="name" value="ThingTwo"/>
+		<constructor-arg name="year" value="2001"/>
+	</bean>
+	
+	<!-- Constructor arguments with index -->
+	<bean name="thingThree" class="com.kasegvikas.model.ThingThree">
+		<constructor-arg index="0" value="ThingThree"/>
+		<constructor-arg index="1" value="2002"/>
+	</bean>
+	
+	<!-- Constructor arguments with type matching -->
+	<bean name="thingFour" class="com.kasegvikas.model.ThingFour">
+		<constructor-arg type="String" value="ThingFour"/>
+		<constructor-arg type="int" value="2003"/>
+	</bean>
+	
+	<!-- Constructor arguments with @ConstructorProperties -->
+	<bean name="thingFive" class="com.kasegvikas.model.ThingFive">
+		<constructor-arg name="nameProp" value="ThingFive"/>
+		<constructor-arg name="yearProp" value="2004"/>
+	</bean>
+
+</beans>
