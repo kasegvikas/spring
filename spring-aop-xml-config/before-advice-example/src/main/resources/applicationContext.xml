@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Defining logging aspect -->
+	<bean id="loggingAspect" class="com.kasegvikas.aspect.LoggingAspect" />
+	<!-- Defining target object -->
+	<bean id="sampleTargetService" name="sampleTargetService"
+		class="com.kasegvikas.service.SampleTargetServiceImpl" />
+	<!-- Logging aspect configuration -->
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.kasegvikas.service.SampleTargetServiceImpl.*(..))"
+			id="pointCut1" />
+		<aop:aspect ref="loggingAspect">
+			<aop:before method="logExecution" pointcut-ref="pointCut1" />
+		</aop:aspect>
+	</aop:config>
+</beans>
