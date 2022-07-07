@@ -9,7 +9,7 @@
 	<description>Spring container (ApplicationContext) root context intialization using ContextLoaderListener</description>
 
 	<properties>
-		<spring.fw.version>3.0.6.RELEASE</spring.fw.version>
+		<spring.fw.version>3.2.5.RELEASE</spring.fw.version>
 		<resteasy.version>2.2.1.GA</resteasy.version>
 	</properties>
 
